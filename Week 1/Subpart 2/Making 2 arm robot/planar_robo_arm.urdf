@@ -1,0 +1,53 @@
+<robot name="2_R_robot">
+    <link name="fixed_base">
+      <visual>
+         <material name="Cyan1">
+                  <color rgba="0 0.9 0.9 1.0"/>
+         </material>
+         <geometry>
+            <cylinder length = "0.1" radius = "0.1"/>
+         </geometry>
+      </visual>
+    </link>
+
+    <link name="link_1">
+      <visual>
+         <material name="Cyan2">
+                  <color rgba="0 0.9 0 1.0"/>
+         </material>
+         <geometry>
+            <cylinder length = "1" radius = "0.03"/>
+         </geometry>
+      </visual>
+    </link>            
+
+    <link name="link_2">
+      <visual>
+      <material name="Cyan3">
+                  <color rgba="0.9 0.9 0 1.0"/>
+         </material>
+         <geometry>
+            <cylinder length = "0.8" radius = "0.03"/>
+         </geometry>
+      </visual>
+    </link>
+
+
+    <joint name="Revolute_joint_1" type="revolute">
+      <parent link = "fixed_base"/>
+      <child link = "link_1"/>
+      <axis xyz = "1 0 0"/>
+      <origin rpy = "0.8 0 0" xyz = "0 -0.36 0.3583"/>
+      <limit lower = "0" upper = "0.4" effort = "1"/>
+    </joint>
+
+    <joint name="Revolute_joint_2" type="revolute">     ### make it of revolute type
+      <parent link = "link_1"/>
+      <child link = "link_2"/>
+      <origin xyz = "0 0.4 0.5" rpy = "1.57 0 0"/>
+      <axis xyz = "1 0 0"/>
+      <limit lower = "0" upper = "0.4" effort = "1"/>
+     
+    </joint>
+
+</robot>
