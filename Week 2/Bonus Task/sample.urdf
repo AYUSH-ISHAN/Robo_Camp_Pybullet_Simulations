@@ -1,0 +1,53 @@
+<robot name="sphere">
+    
+<material name="blue">
+    <color rgba="0 0 0.8 1"/>
+  </material>
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+
+<link name="base">
+        <contact>
+          <restitution value = "1"/>
+          <spinning_friction value = "0.0"/>
+          <lateral_friction value="0.0"/>
+          <rolling_friction value="0.0"/>
+          <contact_cfm value="0.0"/>
+          <contact_erp value="0.0"/>
+        </contact>
+        <inertial>
+         <origin xyz ="0 0 0" rpy="0 0 0"/>
+         <mass value="20"/>
+         <inertia
+           ixx="1.2"
+           iyy="5.5"
+           izz="6.0"
+           ixy="0.0"
+           ixz="-0.2"
+           iyz="-0.01" />
+                   
+        </inertial>
+
+
+        <visual>
+          <origin xyz ="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.05"/>
+        </geometry>
+        <material name="blue">
+          <color rgba="0.3 0.3 0.3 1.0"/>
+        </material>
+      </visual>  
+      <collision>
+            <contact_coefficients mu = "1" kp = "1" kd = "1" />
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+              <sphere radius="0.05"/>
+            </geometry>
+      </collision> 
+   </link>
+</robot>
